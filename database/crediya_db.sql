@@ -69,9 +69,6 @@ CREATE TABLE prestamo (
     fecha_vencimiento DATE NOT NULL,
     estado ENUM('PENDIENTE', 'ACTIVO', 'PAGADO', 'RECHAZADO', 'VENCIDO') NOT NULL DEFAULT 'PENDIENTE',
     observacion VARCHAR(255) NULL,
-    INDEX idx_prestamo_cliente (id_cliente),
-    INDEX idx_prestamo_estado (estado),
-    INDEX idx_prestamo_fecha_solicitud (fecha_solicitud),
     CONSTRAINT chk_prestamo_capital CHECK (capital > 0),
     CONSTRAINT chk_prestamo_tasa CHECK (tasa_interes_mensual > 0),
     CONSTRAINT chk_prestamo_plazo CHECK (plazo_meses > 0),
@@ -149,69 +146,17 @@ CREATE TABLE detalle_pago (
 );
 
 INSERT INTO politica_credito (
-    id_politica,
-    tipo_interes,
-    tasa_interes_mensual,
-    monto_minimo,
-    monto_maximo,
-    plazo_minimo_meses,
-    plazo_maximo_meses,
-    tope_asesor,
-    tope_supervisor,
-    activo
-) VALUES (
-    1,
-    'COMPUESTO',
-    1.50,
-    500000.00,
-    100000000.00,
-    1,
-    60,
-    3000000.00,
-    10000000.00,
-    TRUE
-)
+    id_politica, tipo_interes, tasa_interes_mensual, monto_minimo, monto_maximo, plazo_minimo_meses, plazo_maximo_meses, tope_asesor, tope_supervisor, activo
+) 
+VALUES (1, 'COMPUESTO', 1.50, 500000.00, 100000000.00, 1, 60, 3000000.00, 10000000.00, TRUE) AS nueva_politica
 ON DUPLICATE KEY UPDATE
-    tipo_interes = VALUES(tipo_interes),
-    tasa_interes_mensual = VALUES(tasa_interes_mensual),
-    monto_minimo = VALUES(monto_minimo),
-    monto_maximo = VALUES(monto_maximo),
-    plazo_minimo_meses = VALUES(plazo_minimo_meses),
-    plazo_maximo_meses = VALUES(plazo_maximo_meses),
-    tope_asesor = VALUES(tope_asesor),
-    tope_supervisor = VALUES(tope_supervisor),
-    activo = VALUES(activo);
-
-INSERT INTO persona (
-    nombre,
-    documento,
-    correo,
-    clave,
-    activo
-) VALUES (
-    'Leyder Joseph Martínez López',
-    '1005182668',
-    'leyder-joseph.13@hotmail.es',
-    '1234',
-    TRUE
-)
-ON DUPLICATE KEY UPDATE
-    nombre = VALUES(nombre),
-    correo = VALUES(correo),
-    clave = VALUES(clave),
-    activo = VALUES(activo);
-
-INSERT INTO empleado (
-    id_persona,
-    rol,
-    salario
-)
-SELECT
-    id_persona,
-    'GERENTE',
-    5000000.00
-FROM persona
-WHERE documento = '1005182668'
-ON DUPLICATE KEY UPDATE
-    rol = VALUES(rol),
-    salario = VALUES(salario);
+    tipo_interes = nueva_politica.tipo_interes,
+    tasa_interes_mensual = nueva_politica.tasa_interes_mensual,
+    monto_minimo = nueva_politica.monto_minimo,
+    monto_maximo = nueva_politica.monto_maximo,
+    plazo_minimo_meses = nueva_politica.plazo_minimo_meses,
+    plazo_maximo_meses = nueva_politica.plazo_maximo_meses,
+    tope_asesor = nueva_politica.tope_asesor,
+    tope_supervisor = nueva_politica.tope_supervisor,
+    activo = nueva_politica.activo;
+    
