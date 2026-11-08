@@ -1,6 +1,6 @@
-# CrediYa S.A.S. - Sistema de Prestamos y Cobros
+# CrediYa  - Sistema de Prestamos y Cobros
 
-Sistema de consola desarrollado en Java para digitalizar la gestion de empleados, clientes, prestamos, aprobaciones y pagos de **CrediYa S.A.S.**. La aplicacion usa MySQL mediante JDBC, sigue la arquitectura MVC con DAO y permite generar respaldos serializados.
+Sistema de consola desarrollado en Java para digitalizar la gestion de empleados, clientes, prestamos, aprobaciones y pagos de **CrediYa**. La aplicacion usa MySQL mediante JDBC, sigue la arquitectura MVC con DAO y permite generar respaldos serializados.
 
 > Proyecto academico orientado a aplicar Programacion Orientada a Objetos, colecciones, archivos, JDBC, SOLID y patrones de diseno.
 
@@ -131,54 +131,58 @@ Todos los valores monetarios se almacenan como `DECIMAL` en MySQL.
 
 Muestra la consola con el mensaje de conexion exitosa y el menu de inicio de sesion.
 
-![Conexion e inicio de sesion](docs/images/01-conexion-login.png)
+![Conexion e inicio de sesion](/CrediYa/Documentos/imagenes/01-conexion-login.png)
 
 ### Menu del gerente
 
 Muestra el menu completo del gerente, incluyendo empleados, clientes, prestamos, pagos, reportes y respaldos.
 
-![Menu gerente](docs/images/02-menu-gerente.png)
+![Menu gerente](/CrediYa/Documentos/imagenes/02-menu-gerente.png)
 
 ### Radicacion y calculo del prestamo
 
 Muestra un prestamo radicado con su capital, monto total, cuota mensual y estado pendiente.
 
-![Prestamo radicado](docs/images/03-prestamo-radicado.png)
+![Prestamo radicado](/CrediYa/Documentos/imagenes/03-prestamo-radicado.png)
 
 ### Aprobacion por cadena de responsabilidad
 
 Muestra un prestamo aprobado por asesor, supervisor o gerente, segun su monto.
 
-![Aprobacion de prestamo](docs/images/04-aprobacion-prestamo.png)
+![Aprobacion de prestamo asesor](/CrediYa/Documentos/imagenes/04-aprobacion-cadena-asesor.png)
+![Aprobacion de prestamo supervisor](/CrediYa/Documentos/imagenes/04-aprobacion-cadena-supervisor.png)
+![Aprobacion de prestamo gerente](/CrediYa/Documentos/imagenes/04-aprobacion-cadena-gerente.png)
+
+
 
 ### Historial de aprobacion
 
 200
-![Historial de aprobacion](docs/images/05-historial-aprobacion.png)
+![Historial de aprobacion](/CrediYa/Documentos/imagenes/05-historial-aprobacion.png)
 
 ### Pago mixto
 
 Muestra un pago con efectivo y transferencia, incluyendo el tipo de transferencia y la referencia.
 
-![Pago mixto](docs/images/06-pago-mixto.png)
+![Pago mixto](/CrediYa/Documentos/imagenes/06-Pagomixto.png)
 
 ### Vista del cliente
 
 Muestra el menu del cliente con sus consultas de informacion, prestamos y pagos.
 
-![Menu cliente](docs/images/07-menu-cliente.png)
+![Menu cliente](/CrediYa/Documentos/imagenes/07-menuclientepng.png)
 
 ### Reportes
 
 Muestra alguno de los reportes: prestamos activos, total prestado, recaudo o saldo de cartera.
 
-![Reportes](docs/images/08-reportes.png)
+![Reportes](/CrediYa/Documentos/imagenes/08-ver-reporte.png)
 
 ### Base de datos
 
 Muestra las tablas de `crediya_db` desde MySQL Workbench.
 
-![Base de datos MySQL](docs/images/09-base-datos.png)
+![Base de datos MySQL](/CrediYa/Documentos/imagenes/09-basedatospng.png)
 
 ## Requisitos e instalacion
 
@@ -286,7 +290,3 @@ Proyecto_CrediYa/
 ## Autores
 
 - Leyder Joseph Martinez Lopez
-
----
-
-Desarrollado como proyecto academico para la gestion digital de prestamos y cobros de CrediYa S.A.S.
