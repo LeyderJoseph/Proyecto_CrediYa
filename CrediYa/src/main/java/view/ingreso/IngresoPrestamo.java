@@ -36,4 +36,8 @@ public class IngresoPrestamo {
         int opcion = validaciones.pedirEnteroEnRango("Filtre por estado: 1. Pendiente  2. Activo  3. Pagado  4. Rechazado  5. Vencido", 1, 5);
         return EstadoPrestamo.values()[opcion - 1];
     }
+
+    public int pedirIdEmpleadoRadicador() {
+        return validaciones.pedirEnteroEnRango("Ingrese el ID del asesor o empleado radicador:", 1, Integer.MAX_VALUE);
+    }
 }
