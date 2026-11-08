@@ -217,8 +217,6 @@ private final String usuario = "root";
 private final String clave = "TU_CLAVE_MYSQL";
 ```
 
-> Nunca publiques una clave real de MySQL en un repositorio publico.
-
 ### 4. Ejecutar el proyecto
 
 En NetBeans:
