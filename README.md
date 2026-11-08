@@ -2,8 +2,6 @@
 
 Sistema de consola desarrollado en Java para digitalizar la gestion de empleados, clientes, prestamos, aprobaciones y pagos de **CrediYa**. La aplicacion usa MySQL mediante JDBC, sigue la arquitectura MVC con DAO y permite generar respaldos serializados.
 
-> Proyecto academico orientado a aplicar Programacion Orientada a Objetos, colecciones, archivos, JDBC, SOLID y patrones de diseno.
-
 ## Contenido
 
 - [Caracteristicas](#caracteristicas)
@@ -125,8 +123,6 @@ Todos los valores monetarios se almacenan como `DECIMAL` en MySQL.
 
 ## Capturas del sistema
 
-> Crea en GitHub la carpeta `docs/images/` y sube tus capturas con los nombres indicados. Cuando las subas, estas imagenes apareceran automaticamente en el README.
-
 ### Conexion a MySQL e inicio de sesion
 
 Muestra la consola con el mensaje de conexion exitosa y el menu de inicio de sesion.
@@ -141,7 +137,7 @@ Muestra el menu completo del gerente, incluyendo empleados, clientes, prestamos,
 
 ### Radicacion y calculo del prestamo
 
-Muestra un prestamo radicado con su capital, monto total, cuota mensual y estado pendiente.
+Muestra un prestamo radicado 
 
 ![Prestamo radicado](/CrediYa/Documentos/imagenes/03-prestamo-radicado.png)
 
@@ -157,7 +153,7 @@ Muestra un prestamo aprobado por asesor, supervisor o gerente, segun su monto.
 
 ### Historial de aprobacion
 
-200
+
 ![Historial de aprobacion](/CrediYa/Documentos/imagenes/05-historial-aprobacion.png)
 
 ### Pago mixto
