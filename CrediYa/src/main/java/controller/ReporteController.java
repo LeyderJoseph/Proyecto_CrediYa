@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 import model.Cliente;
 import model.EstadoPrestamo;
 import model.Prestamo;
+import service.GestorPrestamos;
 import view.imprimir.ImprimirPrestamo;
 import view.imprimir.MenuReporte;
 
@@ -17,6 +18,7 @@ public class ReporteController {
     private final PagoDAO pagoDAO = new PagoDAO();
     private final ImprimirPrestamo imprimir = new ImprimirPrestamo();
     private final MenuReporte menu = new MenuReporte();
+    private final GestorPrestamos gestorPrestamos = new GestorPrestamos();
 
     public void menu() {
         int opcion;
@@ -30,10 +32,11 @@ public class ReporteController {
                 case 4 -> System.out.println("Total prestado: " + totalPrestado());
                 case 5 -> System.out.println("Total recaudado: " + totalRecaudado());
                 case 6 -> System.out.println("Saldo total de cartera: " + saldoCartera());
-                case 7 -> System.out.println("Regresando al menu gerente.");
+                case 7 -> gestorPrestamos.mostrarResumen(gestorPrestamos.cargarPrestamos());
+                case 8 -> System.out.println("Regresando al menu gerente.");
                 default -> System.out.println("Opcion invalida.");
             }
-        } while (opcion != 7);
+        } while (opcion != 8);
     }
 
     private List<Prestamo> prestamosPorEstado(EstadoPrestamo estado) {
